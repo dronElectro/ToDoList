@@ -20,6 +20,7 @@ namespace ToDoList
         string userId;
         string query;
         string url;
+        string id;
         public ToDo(string userId)
         {
             this.userId = userId;
@@ -58,7 +59,7 @@ namespace ToDoList
             int index = e.RowIndex;
             if(index>=0)
             {
-                string id = MyTasksDG[0, index].Value.ToString();
+                id = MyTasksDG[0, index].Value.ToString();
                 SELECT select = new SELECT(mySQLDB);
                 select.Select("SELECT note, status,url FROM todolist WHERE id =" + id);
                 NoteRTB.Text = select.Table.Rows[0].ItemArray[0].ToString();
@@ -84,6 +85,12 @@ namespace ToDoList
                     MessageBox.Show("Warning");
                 }
             }
+        }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            UPDATEToDoList update = new UPDATEToDoList(mySQLDB);
+            update.Update(id, NoteRTB.Text, StatusCB.Text);
         }
     }
 }

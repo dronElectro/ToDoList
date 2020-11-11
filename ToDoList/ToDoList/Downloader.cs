@@ -21,18 +21,15 @@ namespace ToDoList
 
         public bool downloadFile()
         {
-            //client.OpenRead(_url);
             try
             {
                 client.DownloadData(_url);
-                //if (!String.IsNullOrEmpty(client.ResponseHeaders["Content-Disposition"]))
-               // {
+
                     string fileName = client.ResponseHeaders["Content-Disposition"]
                         .Substring(client.ResponseHeaders["Content-Disposition"]
                         .IndexOf("filename=") + 9).Replace("\"", "");
                     Console.WriteLine(fileName);
                     client.DownloadFileAsync(new Uri(_url), _path + "\\"+fileName);
-                //}
                 return true;
             }
             catch

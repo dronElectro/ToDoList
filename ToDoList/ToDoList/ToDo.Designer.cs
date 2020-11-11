@@ -148,6 +148,7 @@
             this.SaveBtn.TabIndex = 4;
             this.SaveBtn.Text = "Save Changes";
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // ToDo
             // 
