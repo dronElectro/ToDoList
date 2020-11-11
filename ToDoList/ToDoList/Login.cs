@@ -19,15 +19,14 @@ namespace ToDoList
         MySQLConnectionString connStr;
         MySQLDBConnection mySQLDB;
         SELECT select;
-        
+        User newUser;
+
+
         private void Login_Load(object sender, EventArgs e)
         {
             connStr = new MySQLConnectionString("localhost", "root", "root", "testDB");
             mySQLDB = new MySQLDBConnection(connStr);
             select = new SELECT(mySQLDB);
-            User test = new User("test", "test", "2020-01-01");
-            INSERT insert = new INSERT(mySQLDB);
-            //insert.Insert(test);
         }
 
         private void AcceptButton_Click(object sender, EventArgs e)
@@ -47,5 +46,35 @@ namespace ToDoList
 
         }
 
+        private void RegBtn_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            if((TBName.Text != "" || TBName.Text !=null) && (TBPass.Text != "" || TBPass.Text != null))
+            {
+                newUser = new User(TBName.Text, TBPass.Text, now.ToString("yyyy-MM-dd HH:mm:ss"));
+                INSERT insert = new INSERT(mySQLDB);
+                insert.Insert(newUser);
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -43,7 +43,6 @@ namespace ToDoList
                     query += ",";
             }
             query += ")";
-            MessageBox.Show(query);
             MySqlScript script = new MySqlScript(_connection.Connection, query);
             script.Execute();
         }

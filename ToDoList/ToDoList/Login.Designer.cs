@@ -31,6 +31,7 @@
             this.TBName = new System.Windows.Forms.TextBox();
             this.TBPass = new System.Windows.Forms.TextBox();
             this.AcceptButton = new System.Windows.Forms.Button();
+            this.RegBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TBName
@@ -50,7 +51,7 @@
             // 
             // AcceptButton
             // 
-            this.AcceptButton.Location = new System.Drawing.Point(76, 172);
+            this.AcceptButton.Location = new System.Drawing.Point(76, 160);
             this.AcceptButton.Name = "AcceptButton";
             this.AcceptButton.Size = new System.Drawing.Size(75, 23);
             this.AcceptButton.TabIndex = 2;
@@ -58,11 +59,22 @@
             this.AcceptButton.UseVisualStyleBackColor = true;
             this.AcceptButton.Click += new System.EventHandler(this.AcceptButton_Click);
             // 
+            // RegBtn
+            // 
+            this.RegBtn.Location = new System.Drawing.Point(62, 189);
+            this.RegBtn.Name = "RegBtn";
+            this.RegBtn.Size = new System.Drawing.Size(103, 23);
+            this.RegBtn.TabIndex = 3;
+            this.RegBtn.Text = "Registration";
+            this.RegBtn.UseVisualStyleBackColor = true;
+            this.RegBtn.Click += new System.EventHandler(this.RegBtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(214, 235);
+            this.ClientSize = new System.Drawing.Size(216, 272);
+            this.Controls.Add(this.RegBtn);
             this.Controls.Add(this.AcceptButton);
             this.Controls.Add(this.TBPass);
             this.Controls.Add(this.TBName);
@@ -80,6 +92,7 @@
         private System.Windows.Forms.TextBox TBName;
         private System.Windows.Forms.TextBox TBPass;
         private System.Windows.Forms.Button AcceptButton;
+        private System.Windows.Forms.Button RegBtn;
     }
 }
 
