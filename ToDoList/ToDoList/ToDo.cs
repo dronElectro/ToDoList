@@ -74,8 +74,15 @@ namespace ToDoList
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
             if(folderBrowser.ShowDialog()==DialogResult.OK)
             {
-                WebClient client = new WebClient();
-                client.DownloadFile(url, folderBrowser.SelectedPath + "\\" + "1.txt");
+                Downloader download = new Downloader(url, folderBrowser.SelectedPath);
+                if(download.downloadFile())
+                {
+                    MessageBox.Show("Done");
+                }
+                else
+                {
+                    MessageBox.Show("Warning");
+                }
             }
         }
     }
