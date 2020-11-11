@@ -26,6 +26,13 @@ namespace ToDoList
             Table.Clear();
             dataAdapter.Fill(Table);
         }
+
+        public void Select(string query)
+        {
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(query, _connection.Connection);
+            Table.Clear();
+            dataAdapter.Fill(Table);
+        }
         public List<string> TableToList(int index)
         {
             if(index < Table.Rows.Count)
